@@ -1,0 +1,27 @@
+.footer
+{
+    /* background: #0000ff33; */
+
+    min-height: 5.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .photographerCredits 
+{
+    font-size: 1.5rem;
+}
+
+.footer .photographerCredits a
+{
+    font-weight: 600;
+    transition-property: color;
+    transition-duration: var(--transition-duration);
+    color: var(--accent-color-2);
+}
+
+.footer .photographerCredits a:hover
+{
+    color: var(--accent-color-1);
+}

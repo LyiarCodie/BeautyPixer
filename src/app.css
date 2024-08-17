@@ -1,0 +1,10 @@
+.app {
+    min-height: 100vh;
+    
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+}

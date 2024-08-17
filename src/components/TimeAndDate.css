@@ -1,0 +1,18 @@
+.timeAndDate
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 .1rem .5rem #00000099;
+}
+
+.timeAndDate h1 {
+    font-size: 7.2rem;
+    line-height: 1;
+}
+
+.timeAndDate h2 {
+    font-size: 2.4em;
+    font-weight: 300;
+}

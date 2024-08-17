@@ -1,0 +1,40 @@
+:root {
+  font-family: "DM Sans", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--white);
+  background-color: var(--black);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 62.5%;
+
+  --accent-color-1: #f472b6;
+  --accent-color-2: #f9a8d4;
+  --white: #e4e4e7;
+  --black: #09090b;
+
+  --transition-duration: 100ms;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input, button, a {
+  text-decoration: none;
+  border: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+body {
+  font-size: 1.4rem;
+  min-height: 100vh;
+}

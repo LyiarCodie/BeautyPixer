@@ -1,0 +1,39 @@
+.bookmarksBar 
+{
+    list-style-type: none;
+    display: flex;
+    gap: .8rem;
+}
+
+.bookmarkLink
+{
+    display: block;
+}
+
+.bookmarkLink a
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 5.2rem;
+    min-width: 5.2rem;
+    border: 1px solid #ffffff33;
+    background: #ffffff09;
+    border-radius: .8rem;
+}
+
+.bookmarkLink a img
+{
+    opacity: 0.6;
+}
+
+.bookmarkLink a:hover
+{
+    border-color: #ffffff66;
+    background: #ffffff05;
+}
+
+.bookmarkLink a:hover img
+{
+    opacity: 1;
+}
