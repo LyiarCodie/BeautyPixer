@@ -1,10 +1,43 @@
+import { useEffect, useState } from 'preact/hooks'
+import dayjs from 'dayjs'
+
 import './TimeAndDate.css'
 
 export const TimeAndDate = () => {
     return (
         <div className='timeAndDate'>
-            <h1>9:41 PM</h1>
-            <h2>Aug 16, 2024</h2>
+            <Time />
+            <Date />
         </div>
+    )
+}
+
+const Time = () => {
+    const [currentTime, setCurrentTime] = useState(dayjs().format("h:m:s A"));
+
+    useEffect(() => {
+        setInterval(() => {
+            setCurrentTime(dayjs().format("h:mm A"));
+        }, 800)
+    }, [])
+
+    return (
+        <h1>
+            {currentTime}
+        </h1>
+    )
+}
+
+const Date = () => {
+    const [currentDate, setCurrentDate] = useState( dayjs().format("MMM D, YYYY") );
+
+    useEffect(() => {
+        setInterval(() => {
+            setCurrentDate(dayjs().format("MMM D, YYYY"));
+        }, 800)
+    }, [])
+
+    return (
+        <h2>{currentDate}</h2>
     )
 }

@@ -10,7 +10,7 @@
     display: block;
 }
 
-.bookmarkLink a
+.bookmarkLink a, .bookmarkLink button
 {
     display: flex;
     justify-content: center;
@@ -22,18 +22,18 @@
     border-radius: .8rem;
 }
 
-.bookmarkLink a img
+.bookmarkLink a img, .bookmarkLink button img, .bookmarkLink button svg
 {
     opacity: 0.6;
 }
 
-.bookmarkLink a:hover
+.bookmarkLink a:hover, .bookmarkLink button:hover
 {
     border-color: #ffffff66;
     background: #ffffff05;
 }
 
-.bookmarkLink a:hover img
+.bookmarkLink a:hover img, .bookmarkLink button:hover img, .bookmarkLink button:hover svg
 {
     opacity: 1;
 }

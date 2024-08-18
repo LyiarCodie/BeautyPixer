@@ -10,6 +10,8 @@
     "api": "nodemon api/index.js"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.7",
+    "dayjs": "^1.11.12",
     "express": "^4.19.2",
     "preact": "^10.23.1"
   },
