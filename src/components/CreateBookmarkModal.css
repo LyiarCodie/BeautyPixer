@@ -65,6 +65,24 @@
     flex-direction: column;
 }
 
+.createBookmarkModal .input-block:nth-child(4)
+{
+    flex-direction: row;
+    align-items: center;
+    gap: .8rem;
+}
+
+.createBookmarkModal .input-block:nth-child(4) label
+{
+    margin: 0;
+}
+
+.createBookmarkModal .input-block:nth-child(4) input[type='checkbox']
+{
+    width: 2rem;
+    height: 2rem;
+}
+
 .createBookmarkModal .input-block.buttons-block 
 {
     flex-direction: row;

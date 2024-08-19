@@ -4,6 +4,7 @@ import { Plus } from '@phosphor-icons/react'
 
 import './BookmarksBar.css';
 import './CreateBookmarkModal.css';
+import './DropdownMenu.css';
 
 /**
  * @typedef {Object} Bookmark
@@ -17,6 +18,7 @@ export const BookmarksBar = () => {
     const [modalVisibility, setModalVisibility] = useState(false);
     const [bookmarkTitle, setBookmarkTitle] = useState("");
     const [bookmarkURL, setBookmarkURL] = useState("");
+    const [openIn, setOpenIn] = useState(false);
     const [bookmarksList, setBookmarksList] = useState(
         [
             {
@@ -42,12 +44,15 @@ export const BookmarksBar = () => {
      */
     const createBookmark = (title, iconSrc, href, openIn) => {
         return {
-            title, iconSrc, href, openIn
+            title, 
+            iconSrc, 
+            href, 
+            openIn: openIn ? "newTab" : "sameTab"
         }
     }
 
     const createModalCallback = () => {
-        const bookmark = createBookmark(bookmarkTitle, "https://xvideos.com/favicon.ico", bookmarkURL, "newTab");
+        const bookmark = createBookmark(bookmarkTitle, "https://xvideos.com/favicon.ico", bookmarkURL, openIn);
         bookmarksList.push(bookmark);
         setBookmarksList(bookmarksList);
         resetModalInputs();
@@ -64,6 +69,13 @@ export const BookmarksBar = () => {
         setBookmarkTitle(event.target.value);
     };
 
+    /** @param {InputEvent} event */
+    const onOpenInChange = (event) => {
+        const { checked } = event.target;
+
+        setOpenIn(checked);
+    }
+
     const openModalCallback = () => {
         setModalVisibility(true);
     };
@@ -76,6 +88,7 @@ export const BookmarksBar = () => {
     const resetModalInputs = () => {
         setBookmarkTitle("");
         setBookmarkURL("");
+        setOpenIn(false);
     };
 
     return (
@@ -90,6 +103,8 @@ export const BookmarksBar = () => {
                 ))
             }
 
+            <DropdownMenu />
+
             <AddBookmark 
                 onAddBookmarkClick={openModalCallback} 
             />
@@ -99,8 +114,10 @@ export const BookmarksBar = () => {
                 onSaveClick={createModalCallback}
                 onTitleInputChange={onTitleInputChangeCallback}
                 onURLInputChange={onURLInputChangeCallback}
+                onOpenInChange={onOpenInChange}
                 bookmarkTitleState={bookmarkTitle}
                 bookmarkURLState={bookmarkURL}
+                openInState={openIn}
             />
         </ul>
     )
@@ -128,5 +145,29 @@ const AddBookmark = ({onAddBookmarkClick}) => {
                 <Plus size={24} />
             </button>
         </li>
+    )
+}
+
+const DropdownMenu = () => {
+
+    useEffect(() => {
+        /**
+         * @param {Event} e 
+         */
+        const contextMenu = (e) => {
+            e.preventDefault();
+            console.log("must open a custom contextMenu!");
+        }
+        window.addEventListener("contextmenu", contextMenu)
+    }, [])
+
+    return (
+        <div className="dropdownMenu">
+            <button>Delete Bookmark</button>
+            <div className="input-block">
+                <label htmlFor="">Open in new tab</label>
+                <input type="checkbox" name="" id="" />
+            </div>            
+        </div>
     )
 }

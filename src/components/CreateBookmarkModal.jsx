@@ -7,11 +7,13 @@ import { Star } from '@phosphor-icons/react';
 *  onSaveClick: () => void,
 *  onURLInputChange: () => void,
 *  onTitleInputChange: () => void
+*  onOpenInChange: () => void,
 *  bookmarkTitleState: string, 
 *  bookmarkURLState: string,
+*  openInState: boolean
 * }} param0 
 * */
-export const CreateBookmarkModal = ({open, onCancelClick, onSaveClick, onTitleInputChange, onURLInputChange, bookmarkTitleState, bookmarkURLState}) => {
+export const CreateBookmarkModal = ({open, onCancelClick, onSaveClick, onTitleInputChange, onURLInputChange, onOpenInChange, bookmarkTitleState, bookmarkURLState, openInState}) => {
    return (
        <>
            <div className={`backOverlay ${open && "visible"}`}></div>
@@ -37,10 +39,18 @@ export const CreateBookmarkModal = ({open, onCancelClick, onSaveClick, onTitleIn
                    />
                </div>
 
+               <div className="input-block">
+                    <label>
+                        Open in new tab
+                    </label>
+                    <input type="checkbox" onChange={onOpenInChange} checked={openInState} />
+               </div>
+
                <div className="input-block buttons-block">
                    <button onClick={onCancelClick}>Cancel</button>
                    <button onClick={onSaveClick}>Save</button>
                </div>
+
            </dialog>
        </>
    )

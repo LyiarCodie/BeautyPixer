@@ -24,6 +24,4 @@ app.get("/api.beautypixer", async (req, res) => {
     }
 })
 
-
-
 app.listen(port, () => console.log(`listening on http://127.0.0.1:${port}`));
